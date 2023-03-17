@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Serif:ital@1&family=Poppins&family=Roboto&family=Roboto+Mono:ital@1&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: burlywood;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+/* estilos del navbar */
+.navbar{
+    background-color: cornflowerblue;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.navbar a{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 700;
+}
+.logo{
+    margin-right: 50px;
+}
+.list{
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+    margin-right: 40px;
+}
+#toggler,.navbar label{
+    display: none;
+}
+
+.portfolio__section-home{
+    height: 100vh;
+    background-image: url('/home-page-img.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.container__home-redes{
+    display: flex;
+    align-items: center;
+}
+.github{
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+@media (max-width:767px) {
+    .menu{
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+    .list{
+        flex-direction: column;
+        align-items: center;
+    }
+    /* .navbar{
+        position: fixed;
+        top: 0;
+        width: 100%;
+    } */
+    .navbar label{
+        display: flex;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+    #toggler:checked ~ .menu{
+        max-height: 100%;
+    }
+    .portfolio__section-home{
+        background-size: auto;
+    }
+}
