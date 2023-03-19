@@ -1,0 +1,19 @@
+---
+interface Props{
+    titulo?: string,
+    imagen?: string,
+    cssImg?:string,
+    cssDiv?:string,
+    cssTitle?:string
+}
+
+const {titulo,imagen,cssImg,cssDiv,cssTitle} =Astro.props;//desestructuro las propiedades; 
+
+---
+
+<div class='container__card-certificate'>
+    <img src={imagen} class="container__card-img" style={cssImg} alt="" />
+    <div class='container__card-title' style={cssDiv}>
+        <b style={cssTitle}>{titulo}</b>
+    </div>
+</div>

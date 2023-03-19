@@ -67,17 +67,19 @@ body{
 }
 
 .portfolio__section-about{
-    height: 100vh;
-}
-.container__about-father{
     padding: 1cm;
 }
-
 .container__about-data{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10%;
+}
+.container__about-data div{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
 }
 .container__about-data img{
     object-fit:cover;
@@ -130,12 +132,49 @@ body{
 .container__about-study div , .container__about-courses div{
     background-color: var(--first-color-palette);
     padding: 10px;
-    box-shadow: 3px 3px 10px 0 var(--third-color-palette);
+    box-shadow: 4px 4px 12px 2px var(--third-color-palette);
     border-radius: 8px;
 }
 .container__about-study ul , .container__about-courses ul{
     margin-left: 20px;
 }
+
+/* estilos de la Card de react */
+.container__list-card{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.container__card-certificate{
+    height: 180px;
+    width: 180px;
+}
+.container__card-img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 25%;
+}
+.container__card-title{
+    position: relative;
+    margin: 0 -15px;
+    margin-top: -50%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 6px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* estilo del la seccion servicios */
+.container__services{
+    height: 100vh;
+}
+
 @media (max-width:767px) {
     .menu{
         width: 100%;
@@ -169,6 +208,14 @@ body{
         flex-direction: column;
         gap: 20px;
     }
+    /* estilos de la card  */
+    .container__card-certificate{
+        height: 120px;
+        width: 120px;
+    }
+    .container__card-title{
+        padding: 3px 0;
+    }
 }
 @media (min-width:768px) {
     .list a:hover{
@@ -177,5 +224,9 @@ body{
     .container__about-study div:hover, .container__about-courses div:hover{
         transition: all 1s;
         transform: scale(1.06);
+    }
+    .container__card-certificate:hover{
+        transition: all 1s;
+        transform: scale(1.2);
     }
 }
