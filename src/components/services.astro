@@ -1,8 +1,148 @@
 ---
+const primaryTools = [
+    {
+        name:"HTML5",
+        image:"https://blog.hubspot.es/hubfs/media/imagenhtmlejemplo.png",
+        description:"imagen del logo de html5"
+    },
+    {
+        name:"CSS3",
+        image:"https://cdn-icons-png.flaticon.com/512/919/919826.png",
+        description:"imagen del logo de css3"
+    },
+    {
+        name:"Javascript",
+        image:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
+        description:"imagen del logo de javascript"
+    },
+    {
+        name:"Node js",
+        image:"https://softprodigy.com/wp-content/uploads/2019/07/express-js.png",
+        description:"imagen del logo de node.js"
+    },
+    {
+        name:"React Js",
+        image:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/1200px-React.svg.png",
+        description:"imagen del logo de react js"
+    },
+    {
+        name:"Bootstrap",
+        image:"https://blog.baehost.com/wp-content/uploads/2017/12/bootstrap.png",
+        description:"imagen del logo de bootstrap"
+    },
+    {
+        name:"Tailwindcss",
+        image:"https://cms-assets.tutsplus.com/uploads/users/30/posts/34128/preview_image/tailwindcss-pre.png",
+        description:"imagen del logo de tailwindcss"
+    },
+    {
+        name:"SASS",
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMd7eiGMX9FwRLC0uJTDewSjw_7_WvCF4ABLdwztLrCnPEXrqW0gG-pH8eT-fYPLlghjY&usqp=CAU",
+        description:"logo del compilador sass"
+    },
+    {
+        name:"MongoDB",
+        image:"https://www.pngall.com/wp-content/uploads/13/Mongodb-PNG-Pic.png",
+        description:"imagen del logo de mongoDB"
+    },
+    {
+        name:"Netlify",
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrvwgpiqc9FrNeVcW-NQekpPIwIcktyys_nw&usqp=CAU",
+        description:"logo de netlify"
+    },
+    {
+        name:"Railway",
+        image:"https://camo.githubusercontent.com/df61f4b2e2cc40922b5290ed53040485ab7167836872ce1aa88d88462e9816ce/68747470733a2f2f7261696c7761792e6170702f6272616e642f6c6f676f2d6c696768742e706e67",
+        description:"logo de la imagen railway"
+    },
+    {
+        name:"Git",
+        image:"https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png",
+        description:"logo de git"
+    },
+    {
+        name:"GitHub",
+        image:"https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+        description:"logo de github"
+    },
+    {
+        name:"NPM",
+        image:"https://www.w3schools.com/whatis/img_npm.jpg",
+        description:"logo del paquete NPM"
+    },
+    {
+        name:"Nodemailer",
+        image:"https://i0.wp.com/community.nodemailer.com/wp-content/uploads/2015/10/n2-2.png?fit=422%2C360&ssl=1",
+        description:"imagen del servicio nodemailer"
+    },
+    {
+        name:"F-Awesome",
+        image:"https://www.pullrequest.com/blog/webpack-fontawesome-guide/images/fontawesome_hu15eaa8e002b3d236afd61b1f52dd7c1a_51160_1200x1200_fill_box_center_2.png",
+        description:"logo de font-awesome"
+    },
+    {
+        name:"ThunderClient",
+        image:"https://d4.alternativeto.net/nN2-THJrgYk010UDHRym4uCwF8sfckprDu1APEdrqwg/rs:fill:280:280:0/g:ce:0:0/YWJzOi8vZGlzdC9pY29ucy90aHVuZGVyLWNsaWVudF8yMTMzMjYucG5n.png",
+        description:"logo de la imagen de thunderclient"
+    }
+]
 
+const secondaryTools = [
+    {
+        name:"Firebase",
+        image:"https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_1080,q_100,w_1080/v1/gcs/platform-data-dsc/events/firebase_logo-1.png",
+        description:"imagen del logo de firebase"
+    },
+    {
+        name:"DB SQL",
+        image:"https://cdn-icons-png.flaticon.com/512/4492/4492311.png",
+        description:"logo de base de datos SQL"
+    },
+    {
+        name:"Astro JS",
+        image:"https://avatars.githubusercontent.com/u/44914786?s=280&v=4",
+        description:"logo del framework Astro js"
+    },
+    {
+        name:"Socket.io",
+        image:"https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_256/https://itsolution24x7.com/blog/wp-content/uploads/2020/06/socketio.png",
+        description:"logo de socket.io"
+    },
+    {
+        name:"JWT",
+        image:"https://img.icons8.com/color/512/java-web-token.png",
+        description:"icono de jwt"
+    },
+    {
+        name:"Swaggers",
+        image:"https://avatars.githubusercontent.com/u/7658037?s=280&v=4",
+        description:"logo de swaggers"
+    }
+]
 
 ---
 
-<section class="container__services">
-    <h2>Esta es la seccion de servicios</h2>
+<section id="services" class="container__services">
+    <h2>Herramientas Primarias</h2>
+    <div class="container__services-primary">
+        {
+            primaryTools.map(item =>(
+                <figure class="box-father">
+                    <img class="box-img" src={item.image} alt={item.description}/>
+                    <figcaption>{item.name}</figcaption>
+                </figure>
+            ))
+        }
+    </div>
+    <h2>Herramientas secundarias</h2>
+    <div class="container__services-secondary" >
+        {
+            secondaryTools.map(item=>(
+                <figure class="box-father">
+                    <img class="box-img" src={item.image} alt={item.description}/>
+                    <figcaption>{item.name}</figcaption>
+                </figure>
+            ))
+        }
+    </div>
 </section>

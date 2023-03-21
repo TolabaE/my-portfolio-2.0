@@ -67,7 +67,7 @@ body{
 }
 
 .portfolio__section-about{
-    padding: 1cm;
+    padding: 0.5cm;
 }
 .container__about-data{
     display: flex;
@@ -139,7 +139,7 @@ body{
     margin-left: 20px;
 }
 
-/* estilos de la Card de react */
+/* estilos de la Card de certificados*/
 .container__list-card{
     display: flex;
     justify-content: space-around;
@@ -148,13 +148,13 @@ body{
     gap: 30px;
 }
 .container__card-certificate{
-    height: 180px;
-    width: 180px;
+    height: 205px;
+    width: 200px;
 }
 .container__card-img{
     width: 100%;
     height: 100%;
-    object-fit:cover;
+    object-fit:fill;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
     border-top-right-radius: 25%;
@@ -172,7 +172,87 @@ body{
 }
 /* estilo del la seccion servicios */
 .container__services{
-    height: 100vh;
+    padding: 0.5cm;
+}
+.container__services h2,.portfolio__section-project h1{
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'roboto', sans-serif;
+    color: var(--third-color-palette);
+}
+.container__services-primary , .container__services-secondary{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-evenly;
+    gap: 40px;
+    padding: 30px 0;
+}
+
+.box-father figcaption{
+    border: 2px solid var(--second-color-palette);
+    margin: -2px 0 0 0;
+    text-align: center;
+}
+.box-img{
+    background-color: #fdf3f3;
+    border: 2px solid var(--second-color-palette);
+    width: 115px;
+    height: 110px;
+    object-fit: fill;
+}
+/* estilos de la seccion proyectos */
+.portfolio__section-project{
+    padding: 0.5cm;
+}
+.container__proyects-list{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+    gap: 5px;
+    padding: 20px 0;
+}
+.card__project{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.card__project h4{
+    text-align: center;
+}
+.container__card-project{
+    height: 330px;
+    width: 280px;
+    background-color: var(--first-color-palette);
+    border: 3px solid var(--second-color-palette);
+}
+.container__card-project img{
+    height: 82%;
+    width: 100%;
+    object-fit: cover;
+}
+.container__card-tools{
+    text-align: center;
+    padding: 2px 0;
+}
+.container__card-button{
+    display: flex;
+    justify-content: space-around;
+}
+.container__card-button a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #fff;
+}
+.container__card-button button{
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+.btn-proyect-github{
+    background-color: #000000;
+}
+.btn-proyect-deploy{
+    background-color: rgb(15, 98, 250);
 }
 
 @media (max-width:767px) {
@@ -216,6 +296,10 @@ body{
     .container__card-title{
         padding: 3px 0;
     }
+    .box-img{
+        width: 90px;
+        height: 85px;
+    }
 }
 @media (min-width:768px) {
     .list a:hover{
@@ -228,5 +312,12 @@ body{
     .container__card-certificate:hover{
         transition: all 1s;
         transform: scale(1.2);
+    }
+    .container__card-title:hover{
+        opacity: 0;
+    }
+    .box-father:hover{
+        transition: all 0s;
+        transform: scale(1.1);
     }
 }

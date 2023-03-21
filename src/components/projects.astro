@@ -1,0 +1,66 @@
+---
+import CardProject from "./cardProject.astro";
+
+const personalProjects = [
+    {
+        name:"proyecto de desarrollo web",
+        description:"Este proyecto fue desarrollado para mi curso de desarrollo web, unicamente maquetado web",
+        usedTechnologies:"HTML,CSS,SASS,GRID,@Query",
+        gitHub:"https://github.com/TolabaE/proyectoWeb",
+        linkDeploy:"https://pimentonrojo.netlify.app",
+        picture:"/proyectoweb.webp"
+    },
+    {
+        name:"proyecto de JavaScript",
+        usedTechnologies:"HTML,CSS,SASS,@Query,JSON,Fetch",
+        gitHub:"https://github.com/TolabaE/proyectoJavaScript",
+        linkDeploy:"https://ecommerceferreteria.netlify.app",
+        picture:"/proyectoJavascript.webp"
+    },
+    {
+        name:"proyecto de React.Js",
+        usedTechnologies:"HTML,CSS,React JS,Bootstrap,Firebase,Sweetalert2",
+        gitHub:"https://github.com/TolabaE/ecommerReactJs",
+        linkDeploy:"https://ecommer-phone-store.netlify.app",
+        picture:"/proyectoReactJS.webp"
+    },
+    // {
+    //     name:"proyecto Chats",
+    //     description:"",
+    //     gitHub:"",
+    //     linkDeploy:"",
+        
+    // }
+]
+
+
+---
+
+
+<section class="portfolio__section-project" id="project">
+    <h1>Mis Proyectos Personales</h1>
+    <div class="container__proyects-list">
+        {
+            personalProjects.map(project =>(
+                <CardProject
+                    title={project.name}
+                    image={project.picture}
+                    technologies={project.usedTechnologies}
+                    gitHub={project.gitHub}
+                    deploy={project.linkDeploy}
+                />
+            ))
+        }
+    </div>
+</section>
+
+<!-- <div class="container__card-project">
+    <img src={proyect.picture} alt="imagen de la pagina principal del proyecto"/>
+    <div class="container__card-tools">
+        {proyect.usedTechnologies}
+    </div>
+    <div class="container__card-button">
+        <button class="btn-proyect-github"><a target="_blank" href={proyect.gitHub}>GitHub</a></button>
+        <button class="btn-proyect-deploy"><a target="_blank" href={proyect.linkDeploy}>Deploy</a></button>
+    </div>
+</div> -->

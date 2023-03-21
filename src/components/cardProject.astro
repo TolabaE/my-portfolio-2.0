@@ -1,0 +1,26 @@
+---
+interface Props{
+    image?: string,
+    technologies?: string,
+    gitHub?:string,
+    deploy?:string,
+    title?:string
+}
+
+
+const {image,technologies,gitHub,deploy,title} = Astro.props;
+---
+
+<div class="card__project">
+    <h4>{title}</h4>
+    <div class="container__card-project">
+        <img src={image} alt="imagen de la pagina principal del proyecto"/>
+        <div class="container__card-tools">
+            <p>{technologies}</p>
+        </div>
+    </div>
+    <div class="container__card-button">
+        <button class="btn-proyect-github"><a target="_blank" href={gitHub}>GitHub</a></button>
+        <button class="btn-proyect-deploy"><a target="_blank" href={deploy}>Deploy</a></button>
+    </div>
+</div>
