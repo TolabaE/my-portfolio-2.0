@@ -1,0 +1,15 @@
+---
+interface Props {
+    image?: string,
+    detail?: string,
+    name?: string
+}
+
+const {image,detail,name} = Astro.props;
+
+---
+
+<figure class="box-father">
+    <img class="box-img" src={image} alt={detail}/>
+    <figcaption>{name}</figcaption>
+</figure>

@@ -209,7 +209,7 @@ body{
     display: flex;
     justify-content: space-around;
     flex-wrap:wrap;
-    gap: 5px;
+    gap: 25px;
     padding: 20px 0;
 }
 .card__project{
@@ -221,14 +221,17 @@ body{
     text-align: center;
 }
 .container__card-project{
-    height: 330px;
-    width: 280px;
+    height: 360px;
+    width: 300px;
     background-color: var(--first-color-palette);
     border: 3px solid var(--second-color-palette);
 }
 .container__card-project img{
-    height: 82%;
+    height: 80%;
     width: 100%;
+    object-fit: fill;
+}
+.container__card-project img:hover{
     object-fit: cover;
 }
 .container__card-tools{
@@ -290,7 +293,7 @@ body{
     }
     /* estilos de la card  */
     .container__card-certificate{
-        height: 120px;
+        height: 125px;
         width: 120px;
     }
     .container__card-title{
