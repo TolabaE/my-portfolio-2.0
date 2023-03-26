@@ -3,10 +3,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export default{
-    ASTRO_API_SERVER: process.env.astro_server,
+    ASTRO_API_SERVER: process.env.ASTRO_SERVER,
     path:{
-        URL_SERVICES: process.env.path_services,
-        URL_CERTIFICATES: process.env.path_certificates,
-        URL_EMAIL: process.env.path_email
+        URL_SERVICES: process.env.ENDPOINT_SERVICES,
+        URL_CERTIFICATES: process.env.ENDPOINT_CERTIFICATES,
+        URL_EMAIL: process.env.ENDPOINT_EMAIL
     }
 }
