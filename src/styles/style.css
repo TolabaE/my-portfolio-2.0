@@ -174,7 +174,7 @@ body{
 .container__services{
     padding: 0.5cm;
 }
-.container__services h2,.portfolio__section-project h1{
+.container__services h2,.portfolio__section-project h1,.titleContact{
     text-align: center;
     font-size: 2rem;
     font-family: 'roboto', sans-serif;
@@ -257,6 +257,36 @@ body{
 .btn-proyect-deploy{
     background-color: rgb(15, 98, 250);
 }
+/* estilos del formulario de contacto */
+.portfolio__section-contact{
+    margin: 15px 0;
+}
+.container-form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color:var(--first-color-palette) ;
+    margin: 1% 20%;
+    padding:30px 50px;
+    box-shadow: 8px -8px 10px 0 var(--third-color-palette);
+}
+.input-names{
+    font-size: larger;
+}
+.input-names input {
+    width: 98%;
+}
+.container-form input {
+    padding:6px;
+    margin: 5px 0px;
+}
+.contact-title{
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+    color: var(--fifth-color-palette);
+    background-color: var(--first-color-palette);
+}
 
 @media (max-width:767px) {
     .menu{
@@ -302,6 +332,15 @@ body{
     .box-img{
         width: 90px;
         height: 85px;
+    }
+    /* estilos de la seccion contacto */
+    .container-form{
+        text-align: center;
+        margin: 5%;
+        padding: 25px;
+    }
+    .input-names input {
+        width: 95%;
     }
 }
 @media (min-width:768px) {

@@ -1,45 +1,16 @@
 ---
 import Card from "./card.astro";
+import AxiosServices from "../services/axiosServices.js";
+import dotenvConfig from "../config/dotenv.config";
 
-const certificates = [
-        {
-            title:"Desarrollo Web",
-            picture:"/images/630c032d9112aa002425d43b.png",
-            cssImg:"border: 4px solid #fdfd01;",
-            cssDiv:"background-color:#f73877;",
-            cssTitle:"color: #131212;"
-        },
-        {
-            title:"Javascript",
-            picture:"/images/632d086470a306000f24a413.png",
-            cssImg:"border: 4px solid #fdfd01;",
-            cssDiv:"background-color:#f73877;",
-            cssTitle:"color: #131212;"
-        },
-        {
-            title:"React Js",
-            picture: "/images/634d2df86c0b1d000e1adb9f.png",
-            cssImg:"border: 4px solid #fdfd01;",
-            cssDiv:"background-color:#f73877;",
-            cssTitle:"color: #131212;"
-        },
-        {
-            title:"Back-end",
-            picture:"/images/640cf6386936da000e35fa2a.png",
-            cssImg:"border: 4px solid #fdfd01;",
-            cssDiv:"background-color:#f73877;",
-            cssTitle:"color: #131212;"
-        },
-        {
-            title:"Emplear+ Empujar",
-            picture:"/images/diploma Empujar+ Emplear.png",
-            cssImg:"border: 4px solid #0000ff",
-            cssDiv:"background-color: #069af0",
-            cssTitle:"color: #fff"
-        }
-    ]
+const {URL_CERTIFICATES} = dotenvConfig.path;
+
+const services = new AxiosServices(URL_CERTIFICATES);
+
+const response = await services.getAll();
+const certificates = response.data.payload;
+
 ---
-
 
 <div class="container__list-card">
     {

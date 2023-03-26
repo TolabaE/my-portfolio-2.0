@@ -1,24 +1,21 @@
 ---
 import CardServices from "./cardServices.astro";
+import dotenvConfig from "../config/dotenv.config.js";
+import AxiosServices from "../services/axiosServices.js";
+
+const {URL_SERVICES} = dotenvConfig.path;
+
+const skillServices = new AxiosServices(URL_SERVICES);
+
+const response = await skillServices.getAll();
+
+const {payload} = response.data;
 
 
-let primaryServices = [];
-let secondaryServices = [];
-
-const response = await fetch('http://localhost:8080/user/portfolio/services');
-const {payload} = await response.json();
-
-payload.forEach(item => {
-    if (item.id === 1) {
-        primaryServices = item.primaryTools;
-    } else if(item.id === 2) {
-        secondaryServices = item.secondaryTools;
-    }
-});
+let primaryServices = payload[0].primaryTools;
+let secondaryServices = payload[1].secondaryTools;
 
 ---
-
-
 
 <section id="services" class="container__services">
     <h2>Herramientas Primarias</h2>
