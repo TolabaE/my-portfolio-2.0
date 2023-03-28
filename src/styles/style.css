@@ -8,7 +8,7 @@
     --first-color-palette:#6495ed;
     --second-color-palette:#0f1c30;
     --third-color-palette:#304a6e;
-    --fourth-color-palette:#b3c8f3;
+    --fourth-color-palette:#9abcff;
 }
 body{
     font-family: 'Open Sans', sans-serif;
@@ -81,14 +81,58 @@ body{
     gap: 15px;
     align-items: flex-start;
 }
-.container__about-data img{
-    object-fit:cover;
+.container__about-profile{
+    position: relative;
     width: 300px;
     height: 300px;
-    border: 5px solid var(--second-color-palette);
+    border-radius: 5%;
+    overflow: hidden;
+    background: var(--fourth-color-palette);
+}
+.image-profile{
+    position: absolute;
+    inset: 6px;
+    z-index: 2;
+    object-fit:cover;
+    width: 96%;
+    height: 96%;
+    border-radius: 4%;
+}
+.container__about-profile::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(0deg,transparent,transparent,var(--second-color-palette),var(--second-color-palette),var(--second-color-palette));
+    z-index: 1;
+    animation: anime 4s  linear  infinite;
+    transform-origin: bottom right;
+}
+.container__about-profile::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(0deg,transparent,transparent,var(--second-color-palette),var(--second-color-palette),var(--second-color-palette));
+    z-index: 1;
+    animation: anime 4s  linear  infinite;
+    animation-delay: -2s;
+    transform-origin: bottom right;
 }
 .container__about-text{
-    padding: 20px 0;
+    padding: 20px 30px;
+}
+.container__about-text p{
+    font-family:'roboto',sans-serif;
+    color: var(--second-color-palette);
+    font-size: 18px;
+}
+.container__about-text h4{
+    margin-left: 25px;
 }
 .container__about-cv{
     display: flex;
@@ -143,9 +187,9 @@ body{
 .container__list-card{
     display: flex;
     justify-content: space-around;
-    padding: 20px 0;
+    padding: 30px 0;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 40px;
 }
 .container__card-certificate{
     height: 205px;
@@ -257,35 +301,25 @@ body{
 .btn-proyect-deploy{
     background-color: rgb(15, 98, 250);
 }
-/* estilos del formulario de contacto */
-.portfolio__section-contact{
-    margin: 15px 0;
-}
-.container-form{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    background-color:var(--first-color-palette) ;
-    margin: 1% 20%;
-    padding:30px 50px;
-    box-shadow: 8px -8px 10px 0 var(--third-color-palette);
-}
-.input-names{
-    font-size: larger;
-}
-.input-names input {
-    width: 98%;
-}
-.container-form input {
-    padding:6px;
-    margin: 5px 0px;
-}
-.contact-title{
-    text-align: center;
-    margin: 10px;
-    padding: 20px;
-    color: var(--fifth-color-palette);
+/* estilos de la seccion footer */
+.footer{
     background-color: var(--first-color-palette);
+    width: 100%;
+    height: 180px;
+    text-align: center;
+    padding: 20px 0;
+}
+.footer h2{
+    color: var(--second-color-palette);
+}
+.footer__redes{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+}
+.footer__text{
+    padding-top: 30px;
 }
 
 @media (max-width:767px) {
@@ -317,30 +351,26 @@ body{
         flex-direction: column;
         row-gap: 15px;
     }
+    .container__about-text{
+        padding: 25px 0;
+    }
     .section__about-studies{
         flex-direction: column;
         gap: 20px;
     }
-    /* estilos de la card  */
+    /* estilos de la card  de ceetificados*/
     .container__card-certificate{
         height: 125px;
         width: 120px;
     }
     .container__card-title{
+        margin-top: -60%;
         padding: 3px 0;
     }
+    /* estilo de las cards skill */
     .box-img{
         width: 90px;
         height: 85px;
-    }
-    /* estilos de la seccion contacto */
-    .container-form{
-        text-align: center;
-        margin: 5%;
-        padding: 25px;
-    }
-    .input-names input {
-        width: 95%;
     }
 }
 @media (min-width:768px) {
@@ -361,5 +391,16 @@ body{
     .box-father:hover{
         transition: all 0s;
         transform: scale(1.1);
+    }
+}
+
+@keyframes anime{
+    0%
+    {
+        transform:rotate(0deg);
+    }
+    100%
+    {
+        transform:rotate(360deg);
     }
 }

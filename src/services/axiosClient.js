@@ -7,26 +7,9 @@ const {ASTRO_API_SERVER} = dotenvConfig;
 class AxiosClient {
     makeGetRequest = async(path) =>{
         try {
-            return await axios({
-                method:'GET',
-                baseURL:`${ASTRO_API_SERVER}`,
-                url:`${path}`,
+            return await axios.get(`${ASTRO_API_SERVER+path}`,{
                 headers: {'Content-Type':'application/json'}
             });
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    makePostRequest = async(url,body) =>{
-        try {
-            return await axios({
-                method:'POST',
-                baseURL:`${ASTRO_API_SERVER}`,
-                url:`${url}`,
-                data:body,
-                headers: {'Content-Type': 'application/json'}
-            })
         } catch (error) {
             console.log(error);
         }

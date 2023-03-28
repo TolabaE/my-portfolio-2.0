@@ -1,13 +1,13 @@
 ---
-import AxiosServices from "../services/axiosServices.js";
-import dotenvConfig from "../config/dotenv.config.js";
+// import AxiosServices from "../services/axiosServices.js";
+// import dotenvConfig from "../config/dotenv.config.js";
 
-const {URL_EMAIL} = dotenvConfig.path;
+// const {URL_EMAIL} = dotenvConfig.path;
 
-const formServices = new AxiosServices(URL_EMAIL);
+// const formServices = new AxiosServices(URL_EMAIL);
 
 ---
-
+<!-- 
 <section id="contact" class="portfolio__section-contact">
     <h2 class="titleContact">Contacto</h2>
     <form class="container-form" data-services={formServices} >
@@ -22,6 +22,37 @@ const formServices = new AxiosServices(URL_EMAIL);
     </form>
 </section>
 
+<style>
+.portfolio__section-contact{
+    margin: 15px 0;
+}
+.container-form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color:var(--first-color-palette) ;
+    margin: 1% 20%;
+    padding:30px 50px;
+    box-shadow: 8px -8px 10px 0 var(--third-color-palette);
+}
+.input-names{
+    font-size: larger;
+}
+.input-names input {
+    width: 98%;
+}
+.container-form input {
+    padding:6px;
+    margin: 5px 0px;
+}
+.contact-title{
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+    color: var(--fifth-color-palette);
+    background-color: var(--first-color-palette);
+}
+</style>
 <script>
     class form extends HTMLElement{
         constructor(){
@@ -36,6 +67,4 @@ const formServices = new AxiosServices(URL_EMAIL);
             });
         }
     }
-    
-
-</script>
+</script> -->

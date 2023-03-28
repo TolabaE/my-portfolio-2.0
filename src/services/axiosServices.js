@@ -11,10 +11,10 @@ class AxiosServices {
         return await this.client.makeGetRequest(this.path);
     }
 
-    //hago una peticcion de envio de datos de un formulario.
-    sendData = async (body) =>{
-        return await this.client.makePostRequest(this.path,body)
-    }
+    // //hago una peticcion de envio de datos de un formulario.
+    // sendData = async (body) =>{
+    //     return await this.client.makePostRequest(this.path,body)
+    // }
 }
 
 export default AxiosServices;
