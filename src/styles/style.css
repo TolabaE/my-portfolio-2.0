@@ -5,11 +5,13 @@
     margin: 0;
 }
 :root{
-    --first-color-palette:#6495ed;
+    --first-color-palette:#5383db;
     --second-color-palette:#0f1c30;
     --third-color-palette:#304a6e;
-    --fourth-color-palette:#9abcff;
+    --fourth-color-palette:#b6ccfa;
+    --fifth-color-palette:#f0f0f0;
 }
+/* #d5d4d4 */
 body{
     font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
@@ -60,12 +62,12 @@ body{
 .container__home-redes{
     display: flex;
     align-items: center;
+    gap: 8px;
 }
 .github{
     background-color: #fff;
     border-radius: 6px;
 }
-
 .portfolio__section-about{
     padding: 0.5cm;
 }
@@ -76,10 +78,16 @@ body{
     gap: 10%;
 }
 .container__about-data div{
+    background-color: var(--first-color-palette);
+    padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 15px;
     align-items: flex-start;
+    border: 5px ridge var(--second-color-palette);
+}
+.container__about-data div h1{
+    padding-left: 20%;
 }
 .container__about-profile{
     position: relative;
@@ -87,7 +95,7 @@ body{
     height: 300px;
     border-radius: 5%;
     overflow: hidden;
-    background: var(--fourth-color-palette);
+    background-color: var(--fourth-color-palette);
 }
 .image-profile{
     position: absolute;
@@ -124,15 +132,19 @@ body{
     transform-origin: bottom right;
 }
 .container__about-text{
-    padding: 20px 30px;
+    padding: 30px;
 }
 .container__about-text p{
     font-family:'roboto',sans-serif;
     color: var(--second-color-palette);
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 1.5rem;
+    text-indent: 1rem;
 }
 .container__about-text h4{
-    margin-left: 25px;
+    text-indent: 4rem;
 }
 .container__about-cv{
     display: flex;
