@@ -141,9 +141,8 @@ body{
     padding: 30px;
 }
 .container__about-text p{
+    padding: 5px;
     font-family:'roboto',sans-serif;
-    color: var(--second-color-palette);
-    font-weight: 600;
     font-size: 20px;
     letter-spacing: 1px;
     line-height: 1.5rem;
@@ -156,11 +155,15 @@ body{
     display: flex;
     justify-content: center;
 }
+.container__about-cv a:hover{
+    color: #000000;
+}
 .container__about-cv button{
     font-weight: 700;
-    padding: 8px;
+    padding: 8px 15px;
     background-color: #f00707;
-    border-radius: 10px;
+    border-radius: 8px;
+    border: 0;
 }
 .about__cv-link{
     text-decoration: none;
@@ -397,7 +400,7 @@ body{
     }
     .container__about-study div:hover, .container__about-courses div:hover{
         transition: all 1s;
-        transform: scale(1.06);
+        transform: scale(1.04);
     }
     .container__card-certificate:hover{
         transition: all 1s;
