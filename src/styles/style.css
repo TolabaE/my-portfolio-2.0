@@ -31,7 +31,6 @@ body{
     text-decoration: none;
     padding: 6px 10px;
     font-weight: 700;
-    border-radius: 12px;
 }
 .logo{
     margin-right: 50px;
@@ -58,7 +57,7 @@ body{
 .container__home h3{
     font-size: 2.5rem;
     font-family: 'roboto', sans-serif;
-    color: var(--fourth-color-palette);
+    color: var(--first-color-palette);
 }
 .container__home-redes{
     display: flex;
@@ -69,7 +68,9 @@ body{
     background-color: #fff;
     border-radius: 6px;
 }
-.container__home h1{
+#text-development{
+    display: inline-block;
+    border-right: 3px solid var(--fourth-color-palette);
     color: var(--fourth-color-palette);
     font-family: 'Lora', serif;
 }
@@ -149,7 +150,8 @@ body{
     text-indent: 1rem;
 }
 .container__about-text h4{
-    text-indent: 4rem;
+    color: #f00707;
+    text-indent: 5rem;
 }
 .container__about-cv{
     display: flex;
@@ -352,10 +354,13 @@ body{
     .list{
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        padding: 50px 0;
+        padding-left: 32px;
     }
     .navbar label{
         display: flex;
-        margin-right: 20px;
+        margin-right: 10px;
         cursor: pointer;
     }
     #toggler:checked ~ .menu{
@@ -396,8 +401,11 @@ body{
 }
 @media (min-width:768px) {
     .list a:hover{
-        background-color: var(--second-color-palette);
+        border-bottom: 3px solid var(--second-color-palette);
+        color: var(--second-color-palette);
     }
+
+
     .container__about-study div:hover, .container__about-courses div:hover{
         transition: all 1s;
         transform: scale(1.04);
