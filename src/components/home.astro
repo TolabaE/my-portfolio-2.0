@@ -14,19 +14,32 @@
 
 <script>
     const etiqueta = document.getElementById('text-development');
-    const texts = 'Full Stack Web Developer     ';
+    const texts = 'Full Stack Web Developer ';
+
+    let long = texts.length;
+    let count = 0;
 
     function writeTextDom() {
-        const textArray = texts.split('');//corta las palabras y los guarda en un nuevo arreglo.
-        let count = 0;
-        setInterval(() => {
-            etiqueta.innerHTML += textArray[count];
+        if (count < texts.length) {
+            etiqueta.textContent += texts.charAt(count);//corta la letra de acuerdo a la posicion del contador.
             count++;
-            if (count === textArray.length+1) {
-                count = 0;
-                etiqueta.innerHTML = '';
-            }
-        }, 250);
+        }else{
+            deleteTextDom();
+        }
     }
-    writeTextDom();
+
+    function deleteTextDom(){
+        if (count === texts.length) {
+            etiqueta.textContent = texts.substring(0,long);
+            long--;
+            if (long === -2) {
+                etiqueta.textContent = ''
+                long = texts.length;
+                count = 0;
+            }
+        }
+    }
+
+    setInterval(writeTextDom,350);
+
 </script>
