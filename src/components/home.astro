@@ -15,7 +15,6 @@
 <script>
     const etiqueta = document.getElementById('text-development');
     const texts = 'Full Stack Web Developer ';
-
     let long = texts.length;
     let count = 0;
 
@@ -24,22 +23,22 @@
             etiqueta.textContent += texts.charAt(count);//corta la letra de acuerdo a la posicion del contador.
             count++;
         }else{
-            deleteTextDom();
-        }
-    }
+            deleteTextDom();//si el contador llega al limite de la longuitud se ejecuta esta funcion
+        };
+    };
 
     function deleteTextDom(){
         if (count === texts.length) {
             etiqueta.textContent = texts.substring(0,long);
             long--;
             if (long === -2) {
-                etiqueta.textContent = ''
+                etiqueta.textContent = '';
                 long = texts.length;
                 count = 0;
-            }
-        }
-    }
+            };
+        };
+    };
 
-    setInterval(writeTextDom,350);
+    setInterval(writeTextDom,100);
 
 </script>
